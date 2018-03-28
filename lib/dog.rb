@@ -95,7 +95,7 @@ class Dog
       dog_data = search[0]
       self.new_from_db(search)
     else
-      self.create(name: name, breed: breed)
+      dog = self.create(name: name, breed: breed)
     end
   end
 end
