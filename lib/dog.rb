@@ -90,5 +90,11 @@ class Dog
       LIMIT 1
     SQL
     search = DB[:conn].execute(sql, name, breed)
+
+    if !search.empty?
+      self.new_from_db(search)
+    else
+      self.create(name: name, breed: breed)
+    end
   end
 end
